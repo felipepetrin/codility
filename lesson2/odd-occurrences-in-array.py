@@ -1,4 +1,7 @@
-def solution(A):
+from functools import reduce
+
+
+def my_solution(A):
     # write your code in Python 2.7
     for i in range(len(A)):
         temp = A[i]
@@ -15,6 +18,10 @@ def solution(A):
             return value
 
 
+def community_solution(A):
+    return reduce(lambda x, y: x ^ y, A)
+
+
 if __name__ == "__main__":
-    test = solution([9, 3, 9, 3, 7, 9])
+    test = community_solution([9, 3, 9, 3, 7, 9])
     print(test)
